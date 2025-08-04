@@ -1,0 +1,35 @@
+package com.bank.serviceImpl;
+
+import com.bank.entity.Account;
+import com.bank.repository.AccountRepository;
+import com.bank.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class AccountServiceImpl implements AccountService
+{
+    //Inject repository in this
+    @Autowired
+    private AccountRepository repository;
+
+    @Override
+    public String saveAccount(Account account) {
+        repository.save(account);
+        return "Account Added";
+    }
+
+    @Override
+    public List<Account> getAllAccData() {
+        List<Account> accountList = repository.findAll();
+        return accountList;
+    }
+
+    @Override
+    public Account getAccById(int id) {
+        Account accountById = repository.findById(id).orElseThrow(()->new NullPointerException("Data not found"+id));
+        return accountById;
+    }
+}
