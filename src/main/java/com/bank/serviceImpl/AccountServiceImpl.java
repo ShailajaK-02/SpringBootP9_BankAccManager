@@ -22,6 +22,7 @@ public class AccountServiceImpl implements AccountService
         return "Account Added";
     }
 
+    //getalldata method implemented commit
     @Override
     public List<Account> getAllAccData() {
         List<Account> accountList = repository.findAll();
