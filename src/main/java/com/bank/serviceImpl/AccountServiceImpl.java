@@ -32,4 +32,27 @@ public class AccountServiceImpl implements AccountService
         Account accountById = repository.findById(id).orElseThrow(()->new NullPointerException("Data not found"+id));
         return accountById;
     }
+
+    @Override
+    public String deleteAcc(int id) {
+        repository.deleteById(id);
+        return "Account deleted";
+    }
+
+    @Override
+    public Account updateAcc(int id, Account newAcc) {
+       Account account = repository.findById(id).orElseThrow(()-> new NullPointerException("Data not found"));
+
+       account.setAccType(newAcc.getAccType());
+
+       Account updatedAcc = repository.save(account);
+
+       return updatedAcc;
+    }
+
+    @Override
+    public String saveList(List<Account> accountList) {
+        List<Account> accounts = repository.saveAll(accountList);
+        return "List saved";
+    }
 }
