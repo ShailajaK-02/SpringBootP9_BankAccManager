@@ -21,5 +21,6 @@ public interface AccountService
     //update
     Account updateAcc(int id, Account newAcc);
 
+    //savelist
     String saveList(List<Account> accountList);
 }
