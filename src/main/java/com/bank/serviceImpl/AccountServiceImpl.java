@@ -29,6 +29,7 @@ public class AccountServiceImpl implements AccountService
         return accountList;
     }
 
+    //getbyid method implemented commit
     @Override
     public Account getAccById(int id) {
         Account accountById = repository.findById(id).orElseThrow(()->new NullPointerException("Data not found"+id));
