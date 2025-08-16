@@ -15,6 +15,7 @@ public interface AccountService
     //getbyid
     Account getAccById(int id);
 
+    //delete
     String deleteAcc(int id);
 
     Account updateAcc(int id, Account newAcc);
