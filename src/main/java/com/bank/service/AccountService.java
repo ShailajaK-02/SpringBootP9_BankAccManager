@@ -9,6 +9,7 @@ public interface AccountService
     //save method added
     String saveAccount(Account account);
 
+    //getalldata
     List<Account> getAllAccData();
 
     Account getAccById(int id);
