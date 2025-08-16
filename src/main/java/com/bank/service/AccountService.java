@@ -18,6 +18,7 @@ public interface AccountService
     //delete
     String deleteAcc(int id);
 
+    //update
     Account updateAcc(int id, Account newAcc);
 
     String saveList(List<Account> accountList);
