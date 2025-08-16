@@ -43,6 +43,7 @@ public class AccountServiceImpl implements AccountService
         return "Account deleted";
     }
 
+    //update method implemented commit
     @Override
     public Account updateAcc(int id, Account newAcc) {
        Account account = repository.findById(id).orElseThrow(()-> new NullPointerException("Data not found"));
