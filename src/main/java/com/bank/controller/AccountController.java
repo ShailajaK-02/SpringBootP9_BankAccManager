@@ -39,4 +39,25 @@ public class AccountController
         Account accById = accountService.getAccById(id);
         return new ResponseEntity<>(accById,HttpStatus.OK);
     }
+
+    //delete
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteAcc(@PathVariable("id") int id){
+        accountService.deleteAcc(id);
+        return new ResponseEntity<>("Account deleted",HttpStatus.OK);
+    }
+    
+    //update
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Account> updateAcc(@PathVariable("id") int id, @RequestBody Account account){
+        Account updateAcc = accountService.updateAcc(id,account);
+        return new ResponseEntity<>(updateAcc,HttpStatus.OK);
+    }
+
+    //list
+    @PostMapping("/addList")
+    public ResponseEntity<String> addList(@RequestBody List<Account> accounts){
+       accountService.saveList(accounts);
+       return  new ResponseEntity<>("List saved",HttpStatus.OK);
+    }
 }
