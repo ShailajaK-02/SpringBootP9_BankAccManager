@@ -36,6 +36,7 @@ public class AccountServiceImpl implements AccountService
         return accountById;
     }
 
+    //delete method implemented commit
     @Override
     public String deleteAcc(int id) {
         repository.deleteById(id);
