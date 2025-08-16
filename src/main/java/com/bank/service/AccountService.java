@@ -12,6 +12,7 @@ public interface AccountService
     //getalldata
     List<Account> getAllAccData();
 
+    //getbyid
     Account getAccById(int id);
 
     String deleteAcc(int id);
