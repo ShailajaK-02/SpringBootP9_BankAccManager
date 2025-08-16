@@ -11,4 +11,10 @@ public interface AccountService
     List<Account> getAllAccData();
 
     Account getAccById(int id);
+
+    String deleteAcc(int id);
+
+    Account updateAcc(int id, Account newAcc);
+
+    String saveList(List<Account> accountList);
 }
